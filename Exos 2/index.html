@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Exos 2</title>
+</head>
+<body>
+
+<h1 style="text-align: center">Exercice 2</h1>
+<h2>Commande</h2>
+<p>Vous avez commandé <input min="0" type="number" id="nbre"> <span id="article"> article</span> à <span id="prix">12.50</span>€ l'unité</p>
+  total : <span id="total"></span>€
+</p>
+
+<script>
+var nbre = document.getElementById('nbre');
+var article = document.getElementById('article');
+var prix = document.getElementById('prix');
+var total = document.getElementById('total');
+
+nbre.addEventListener('input', function (){
+    articles();
+    calul();
+});
+
+function articles()
+{
+  if (nbre.value >1){
+    article.innerHTML = "articles";
+  }
+  else{
+    article.innerHTML = "article";
+  }
+}
+
+function calul()
+{
+  total.innerHTML = nbre.value * prix.innerHTML;
+}
+
+</script>
+</body>
+</html>
