@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>Exercice 3</title>
+</head>
+<body>
+
+<label for="password"><strong>Mot de passe</strong>
+<input type="password" id="password" name="password"  required>
+<meter value="0" min="0" max="15" low="5" high="10" optimum="15"   ></meter><br>
+<input type="checkbox" id="showPassword">Afficher le mot de passe</input>
+</label>
+
+<script>
+    var mdp = document.getElementById('password');
+    var showmdp = document.getElementById('showPassword');
+    var meter = document.querySelector('meter');
+
+    var mdpnonutilisable = Array("12345", "azerty", "password"); //liste des mots de passe non utilisables
+
+    showmdp.addEventListener("click", function (){
+        if (mdp.type === "password"){ // si le type de l'input est password
+            mdp.type = "text"; // on change le type de l'input en text
+        } else {
+            mdp.type = "password"; // sinon on le remet en password
+        }
+    })
+
+    mdp.addEventListener("input", function(){
+        var length = mdp.value.length;
+        if (length<5 && length>0){
+            meter.value = 5;
+
+        }
+        else if(length>=5 && length<=10)
+        {
+            meter.value = 10
+
+        }
+        else if(length === 0)
+        {
+            meter.value = 0;
+        }
+        else{
+            meter.value = 15;
+        }
+    })
+
+    mdp.addEventListener("input", function(){ // on vérifie si le mot de passe est dans la liste des mots de passe non utilisables
+        if (mdpnonutilisable.includes(mdp.value)){
+            meter.value = 1; // si oui on met la valeur du meter à 1
+        }
+    })
+
+
+</script>
+</body>
+</html>
