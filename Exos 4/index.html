@@ -7,10 +7,15 @@
 <body>
 
 <label for="nom">Ton nom</label><br>
-<input type="text" id="input" placeholder="Entrez votre nom">
+<input type="text" id="input" onblur="modifier_premiere_lettre(this)" placeholder="Entrez votre nom"> <!--Onblur sert en html pour verif que l'utilisateur est quitté son champ-->
 
 <script>
-    function premiere_majuscule(str){
+    function modifier_premiere_lettre(mot){
+        let valeur = mot.value; //on prend la valeur dans le champ
+        let nvvaleur = valeur.charAt(0).toUpperCase(); //on met en maj la premiere lettre et on la stock
+        let motsanspremierelettre = valeur.slice(1); //on supprime la premiere valeur du mot
+        let motavecmaj = nvvaleur + motsanspremierelettre; //nv mot avec la maj + le reste du mot qui a la premiere lettre supprimé
+        mot.value = motavecmaj; //on change la valeur du mot
     }
 </script>
 </body>
