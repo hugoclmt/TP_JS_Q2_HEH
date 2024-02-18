@@ -1,0 +1,32 @@
+html,body{
+    margin: 0;
+    padding: 0;
+    background-color: #dfc3e6;
+}
+
+#containeur{
+    display: flex;
+    justify-content: center;
+}
+
+#containeurgauche{
+    display: flex;
+    flex-direction: column;
+}
+
+#enfantpizza{
+    margin-top: 10px;
+    padding-left: 10px;
+}
+
+
+.enfantchoix{
+    display: flex;
+    align-items: center;
+    margin: 5px;
+}
+
+.enfantsupp{
+    display: none;
+    margin: 5px;
+}

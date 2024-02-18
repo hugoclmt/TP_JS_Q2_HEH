@@ -1,103 +1,50 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr">
 <head>
     <meta charset="UTF-8">
     <title>Formulaire dynamique</title>
+    <link type="text/css" rel="stylesheet" href="lib/css/style.css">
 </head>
 <body>
-<div style="display: flex; justify-content: center">
-    <form>
 
-        <select name="pizza" id="pizzaselect">
+<div id="containeur">
 
-            <option value="Margheritta">Margheritta</option>
-            <option value="Regina">Regina</option>
-            <option value="Capricciosa">Capricciosa</option>
-            <option value="Quattro Fromaggi">Quattro Fromaggi</option>
-            <option value="Diavola">Diavola</option>
-            <option value="Marinara">Marinara</option>
+    <div id="containeurgauche">
 
-        </select>
-
-        <br>
-
-        <input onclick="affichage_supplement()" type="radio" name="choix" id="choix1" ><label for="choix1">Avec suppléments</label>
-
-        <br>
-
-        <input onclick="cacher_supplement()" type="radio" name="choix" id="choix2" checked><label for="choix2">Sans suppléments</label>
-
-        <br>
-
-        <div id="supp" style="display: none;" >
-            <input type="checkbox" value="anchois" class="supp"><label for="supp">Anchois</label>
-            <input type="checkbox" value="frites" class="supp"><label for="supp">Frites</label>
-            <input type="checkbox" value="olives" class="supp"><label for="supp">Olives</label>
+        <div id="enfantpizza">
+            <select name="choix">
+                <option value="a">A</option>
+                <option value="b">B</option>
+                <option value="c">C</option>
+            </select>
         </div>
 
-        <br><br><br>
-
-        <div>
-            <input type="radio" value="visa" name="Payement" id="Visa" ><label for="Visa">Visa</label>
-            <br>
-            <input type="radio" value="cash" name="Payement" id="Cash" checked><label for="Cash">CASH</label>
+        <div class="enfantchoix">
+            <input class="inputchoix" type="radio" id="sans" name="supplement" checked><label for="sans">Sans supplement</label>
         </div>
 
-        <div>
-            <p>Prix :
-            <span id="prix">0 euros</span>
-            </p>
+        <div class="enfantchoix">
+            <input class="inputchoix" type="radio" id="avec" name="supplement"><label for="avec">Avec supplement</label>
         </div>
 
-        <button type="submit" value="commandez">Commandez !</button>
+        <div class="enfantsupp">
+            <input class="supplements" type="checkbox"><label>Champi</label>
+        </div>
+        <div class="enfantsupp">
+            <input class="supplements" type="checkbox"><label>Harricot</label>
+        </div>
+        <div class="enfantsupp">
+            <input class="supplements" type="checkbox"><label>Mozza</label>
+        </div>
 
-    </form>
+    </div>
+
+    <div id="containeurdroit">
+
+    </div>
 </div>
 
-<script>
 
-    function affichage_supplement(){
-        let supplement = document.getElementById('supp');
-        supplement.style.display ="flex";
-    }
-
-    function cacher_supplement(){
-        let supplement = document.getElementById('supp');
-        supplement.style.display = "none";
-    }
-
-    var prixPizza = {
-        Margheritta: 8,
-        Regina: 10,
-        Capricciosa: 11,
-        "Quattro Fromaggi": 10.5,
-        Diavola: 9.5,
-        Marinara: 12.5
-    };
-
-
-    var pizzaSelected = document.getElementById('pizzaselect');
-    var prix = document.getElementById('prix');
-    var supp = document.querySelectorAll('#supp input[type="checkbox"]:checked');
-    var modePayement = document.getElementsByName('Payement');
-    var prixTotal = 0;
-
-
-    (function (){
-        pizzaSelected.addEventListener('change',prix_pizza);
-
-
-    })();
-
-
-    function prix_pizza(){
-        prixTotal = prixPizza[pizzaSelected.value];
-        prix.innerHTML = prixTotal + " euros";
-    }
-
-
-
-
-</script>
+<script src="lib/js/script.js"></script>
 </body>
 </html>
