@@ -30,50 +30,50 @@ Array.from(radios).forEach(function (radio){ // pour chaque bouton radio
 
 
 //partie 2
-var prix = document.getElementById('prix');
-const pizza = {"a" : 8,"b" : 10,"c" : 12};
-var total = 0;
+var prix = document.getElementById('prix'); //on recup l'element avec l'id prix
+const pizza = {"a" : 8,"b" : 10,"c" : 12}; //on crée un tableau associatif avec les pizzas et leur prix
+var total = 0; //on initialise le total a 0
 
 
-function updateTotal(prix_pizza,frais = 0,supplement = 0){
-    total = prix_pizza + frais + supplement;
-    prix.textContent = String(total) + "€";
+function updateTotal(prix_pizza,frais = 0,supplement = 0){ //fct qui sert a mettre a jour le total
+    total = prix_pizza + frais + supplement; //on met a jour le total
+    prix.textContent = String(total) + "€"; //on affiche le total
 }
 
 
 
-( function (){
-    var select = document.getElementById('choixpizza');
-    var prixpizza = 0;
-    select.addEventListener('change',function (){
-        decochageCheckbox();
-        let pizzachoisi  = select.value;
-        if (pizza.hasOwnProperty(pizzachoisi))
+( function (){ //fonction auto executante
+    var select = document.getElementById('choixpizza'); //on recup l'element avec l'id choixpizza
+    var prixpizza = 0; //on initialise le prix de la pizza a 0
+    select.addEventListener('change',function (){ //on verif si on change de pizza
+        decochageCheckbox(); //on decoche les checkbox
+        let pizzachoisi  = select.value; //on recup la valeur de la pizza choisi
+        if (pizza.hasOwnProperty(pizzachoisi)) //on verif si la pizza choisi est dans le tableau associatif
         {
-            prixpizza = pizza[pizzachoisi]
-            updateTotal(prixpizza)
+            prixpizza = pizza[pizzachoisi] //on recup le prix de la pizza choisi
+            updateTotal(prixpizza) //on met a jour le total
         }
     });
-    var frais = 0;
-    var modepayements = document.getElementsByClassName('modepayement');
-    Array.from(modepayements).forEach(function (modepayement){
-        modepayement.addEventListener('change',function (){ //trouvez le bon element
+    var frais = 0; //on initialise les frais a 0
+    var modepayements = document.getElementsByClassName('modepayement'); //on recup tout les elements de la classe modepayement
+    Array.from(modepayements).forEach(function (modepayement){ //on parcours les elements
+        modepayement.addEventListener('change',function (){ // ajoutez un écouteur d'événements
             if (modepayement.id === 'visa'){
-                frais = 2;
-                updateTotal(prixpizza,supp,frais);
+                frais = 2; //on ajoute 2€ de frais si on choisi visa
+                updateTotal(prixpizza,supp,frais); //on met a jour le total
             }
             else{
-                frais = 0;
-                updateTotal(prixpizza,supp,frais);
+                frais = 0; //sinon on met les frais a 0
+                updateTotal(prixpizza,supp,frais); //on met a jour le total
             }
         });
     });
-    var supp = 0
-    Array.from(checkboxs).forEach(function (checkbox){
-        checkbox.addEventListener('click',function () {
-            var nbre = Array.from(checkboxs).filter(c => c.checked).length;
-            supp = nbre * 0.5;
-            updateTotal(prixpizza,frais,supp);
+    var supp = 0 //on initialise les supplements a 0
+    Array.from(checkboxs).forEach(function (checkbox){ //on parcours les checkbox
+        checkbox.addEventListener('click',function () { // ajoutez un écouteur d'événements
+            var nbre = Array.from(checkboxs).filter(c => c.checked).length; //on recup le nombre de checkbox coché
+            supp = nbre * 0.5; //on multiplie le nombre de checkbox coché par 0.5
+            updateTotal(prixpizza,frais,supp); //on met a jour le total
         });
     });
 
