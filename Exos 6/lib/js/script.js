@@ -1,7 +1,7 @@
 //partie 1
-var radios = document.getElementsByClassName('inputchoix'); //on recup tout les éléments de la classe inputchoix = btn radios
-var supplements = document.getElementsByClassName('enfantsupp'); //on recup tout les éléments de la classe enfantsupp = div des elements checkbox supplements
-var checkboxs = document.getElementsByClassName('supplements');// on recup tout les checkbox
+const radios = document.getElementsByClassName('inputchoix'); //on recup tout les éléments de la classe inputchoix = btn radios
+const supplements = document.getElementsByClassName('enfantsupp'); //on recup tout les éléments de la classe enfantsupp = div des elements checkbox supplements
+const checkboxs = document.getElementsByClassName('supplements');// on recup tout les checkbox
 
 function affichagetoggle(display) { //fct qui sert a afficher ou non les elements
     Array.from(supplements).forEach(function (supplement) { //on ajoute dans le tableau les supplements et on les parcours
@@ -31,7 +31,7 @@ Array.from(radios).forEach(function (radio){ // pour chaque bouton radio
 
 //partie 2
 var prix = document.getElementById('prix');
-var pizza = {"a" : 8,"b" : 10,"c" : 12};
+const pizza = {"a" : 8,"b" : 10,"c" : 12};
 var total = 0;
 
 
@@ -46,6 +46,7 @@ function updateTotal(prix_pizza,frais = 0,supplement = 0){
     var select = document.getElementById('choixpizza');
     var prixpizza = 0;
     select.addEventListener('change',function (){
+        decochageCheckbox();
         let pizzachoisi  = select.value;
         if (pizza.hasOwnProperty(pizzachoisi))
         {
@@ -56,21 +57,22 @@ function updateTotal(prix_pizza,frais = 0,supplement = 0){
     var frais = 0;
     var modepayements = document.getElementsByClassName('modepayement');
     Array.from(modepayements).forEach(function (modepayement){
-        modepayement.addEventListener('blur',function (){ //trouvez le bon element
+        modepayement.addEventListener('change',function (){ //trouvez le bon element
             if (modepayement.id === 'visa'){
                 frais = 2;
-                updateTotal(prixpizza,frais);
+                updateTotal(prixpizza,supp,frais);
             }
             else{
-                updateTotal(prixpizza,frais);
+                frais = 0;
+                updateTotal(prixpizza,supp,frais);
             }
         });
     });
-
+    var supp = 0
     Array.from(checkboxs).forEach(function (checkbox){
         checkbox.addEventListener('click',function () {
             var nbre = Array.from(checkboxs).filter(c => c.checked).length;
-            let supp = nbre * 0.5;
+            supp = nbre * 0.5;
             updateTotal(prixpizza,frais,supp);
         });
     });
