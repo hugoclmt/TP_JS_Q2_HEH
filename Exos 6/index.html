@@ -10,9 +10,10 @@
 <div id="containeur">
 
     <div id="containeurgauche">
-
+        <h1>Votre pizza</h1>
         <div id="enfantpizza">
-            <select name="choix">
+            <select id="choixpizza" name="choix">
+                <option selected>Votre choix</option>
                 <option value="a">A</option>
                 <option value="b">B</option>
                 <option value="c">C</option>
@@ -40,6 +41,22 @@
     </div>
 
     <div id="containeurdroit">
+
+
+        <p id="titre">Payement</p>
+        <div class="enfantpayement">
+            <input class="modepayement" type="radio" id="cash" name="payement" checked><label for="cash">CASH</label>
+        </div>
+        <div class="enfantpayement">
+            <input class="modepayement" type="radio" id="visa" name="payement"><label for="visa">Visa</label>
+        </div>
+
+
+        <div id="enfantprix">
+            <p>Prix</p>
+            <span id="prix">0 €</span>
+            <button>Commandez !</button>
+        </div>
 
     </div>
 </div>

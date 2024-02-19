@@ -5,17 +5,19 @@ html,body{
 }
 
 #containeur{
+    margin-top: 15%;
     display: flex;
     justify-content: center;
+
 }
 
 #containeurgauche{
     display: flex;
     flex-direction: column;
+    padding-right: 50px;
 }
 
 #enfantpizza{
-    margin-top: 10px;
     padding-left: 10px;
 }
 
@@ -29,4 +31,30 @@ html,body{
 .enfantsupp{
     display: none;
     margin: 5px;
+}
+
+#containeurdroit{
+    display: flex;
+    flex-direction: column;
+    padding-left: 50px;
+    margin-top: 10px;
+}
+
+#titre{
+    font-size: 20px;
+}
+
+.enfantpayement{
+    display: flex;
+    align-items: center;
+
+}
+
+#enfantprix{
+    display: flex;
+    flex-direction: column;
+}
+
+#prix{
+    margin-top: -15px;
 }
