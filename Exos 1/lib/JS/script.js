@@ -10,3 +10,4 @@ function change_source(image) {
     }
 }
 
+//J'aurai pu utilisé endsWidths afin de tester la fin de la chaine de l'image et verifier qu'elle vaut soit alex.png ou luca.png

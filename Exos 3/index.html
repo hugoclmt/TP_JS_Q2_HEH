@@ -29,25 +29,9 @@
         }
     })
 
-    mdp.addEventListener("input", function(){
+    mdp.addEventListener("input", function(){ //on adapte la longueur du mot de passe a meter
         var length = mdp.value.length;
-        if (length<=5 && length>0){
-            meter.value = 5;
-
-        }
-        else if(length>5 && length<=10)
-        {
-            meter.value = 10
-
-
-        }
-        else if(length === 0)
-        {
-            meter.value = 0;
-        }
-        else{
-            meter.value = 15;
-        }
+        meter.value = length;
     })
 
     mdp.addEventListener("input", function(){ // on vérifie si le mot de passe est dans la liste des mots de passe non utilisables
