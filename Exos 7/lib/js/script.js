@@ -94,4 +94,4 @@ function restart(){
     });
 }
 
-//implementer le choix entre IA et joueur vs Joueur
+//implementer le choix entre IA et joueur vs Joueur utiliser l'algo minMax pour l'ia
