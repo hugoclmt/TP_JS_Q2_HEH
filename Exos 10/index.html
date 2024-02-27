@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>Exos 10</title>
+    <link rel="stylesheet" href="./lib/style.css">
+    <script src="jquery-3.3.1.min.js"></script>
+</head>
+<body>
+
+<div id="containeur">
+<!-- Utiliser des divs au lieu de img
+ utiliser css au lieu de jquery
+ -->
+    <figure>
+        <img src="./img/IMG_2383.JPG">
+        <figcaption>Photo 1</figcaption>
+    </figure>
+    <figure>
+        <img src="./img/IMG_2384.JPG">
+        <figcaption>Photo 2</figcaption>
+    </figure>
+    <figure>
+        <img src="./img/IMG_2385.JPG">
+        <figcaption>Photo 3</figcaption>
+    </figure>
+    <figure>
+        <img src="./img/IMG_2871.JPG">
+        <figcaption>Photo 4</figcaption>
+    </figure>
+    <figure>
+        <img src="./img/427761308_934965904492939_8614603580417813782_n.jpg">
+        <figcaption>Photo 5</figcaption>
+    </figure>
+    <figure>
+        <img src="./img/428314324_1314750076595287_6293483680658130856_n.jpg">
+        <figcaption>Photo 6</figcaption>
+    </figure>
+    <figure>
+        <img src="./img/428442168_3521225131474942_9059590931425637826_n.jpg">
+        <figcaption>Photo 7</figcaption>
+    </figure>
+    <figure>
+        <img src="./img/428939266_2724218397733145_5993076345557563510_n.jpg">
+        <figcaption>Photo 8</figcaption>
+    </figure>
+</div>
+
+<script>
+    $(document).ready(function (){
+        $('figure').each(function (){
+           $(this).click(function (){
+               let containeur = $(this).parent();
+               let img = $(this).find('img');
+
+           });
+        });
+
+    });
+
+
+
+</script>
+
+</body>
+</html>

@@ -1,0 +1,27 @@
+body{
+    background: -webkit-linear-gradient(180deg, #379ca9,#7d7d68,#95282d);/* Chrome 10-25, Safari 5.1-6 */                          background: linear-gradient(180deg, #379ca9,#7d7d68,#95282d);/* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+}
+
+#containeur{
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+}
+
+figure{
+    background-color: azure;
+    padding: 10px;
+    text-align: center;
+    border: black 5px solid;
+    cursor: pointer;
+}
+
+img{
+    padding:  15px;
+    width: 250px;
+    height: 250px;
+}
+
+figcaption{
+    padding-bottom: 15px;
+}
