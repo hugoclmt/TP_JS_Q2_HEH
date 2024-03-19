@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>LazyLoad</title>
+
+    <style>
+        .apparition{
+            transition: 2s;
+        }
+
+        .invisible{
+            opacity: 0;
+            transition: 1s;
+        }
+
+    </style>
+
+
+</head>
+
+<body>
+
+<div style="display: flex">
+    <h1>Papa</h1>
+    <p>Mama</p>
+    <p>Pepe</p>
+</div>
+
+<div class="apparition">
+    <h1>LazyLoad</h1>
+    <p>LazyLoad is a lightweight, flexible script that speeds up your website by deferring the loading of your below-the-fold images, videos and iframes to when they will enter the viewport. It's written in plain "vanilla" JavaScript, it leverages the IntersectionObserver API, it works with responsive images and it supports native lazy-loading.</p>
+</div>
+
+<div class="apparition">
+    <h1>LazyLoad</h1>
+    <p>LazyLoad is a lightweight, flexible script that speeds up your website by deferring the loading of your below-the-fold images, videos and iframes to when they will enter the viewport. It's written in plain "vanilla" JavaScript, it leverages the IntersectionObserver API, it works with responsive images and it supports native lazy-loading.</p>
+</div>
+<!-- genere un contenu assez conséquent pour que je puisse essayer de faire du lazyload -->
+
+<div class="apparition">
+    <h1>LazyLoad</h1>
+    <p>LazyLoad is a lightweight, flexible script that speeds up your website by deferring the loading of your below-the-fold images, videos and iframes to when they will enter the viewport. It's written in plain "vanilla" JavaScript, it leverages the IntersectionObserver API, it works with responsive images and it supports native lazy-loading.</p>
+</div>
+
+<div class="apparition">
+    <h1>LazyLoad</h1>
+    <p>LazyLoad is a lightweight, flexible script that speeds up your website by deferring the loading of your below-the-fold images, videos and iframes to when they will enter the viewport. It's written in plain "vanilla" JavaScript, it leverages the IntersectionObserver API, it works with responsive images and it supports native lazy-loading.</p>
+</div>
+
+<div class="apparition">
+    <h1>LazyLoad</h1>
+    <p>LazyLoad is a lightweight, flexible script that speeds up your website by deferring the loading of your below-the-fold images, videos and iframes to when they will enter the viewport. It's written in plain "vanilla" JavaScript, it leverages the IntersectionObserver API, it works with responsive images and it supports native lazy-loading.</p>
+</div>
+
+<div class="apparition">
+    <h1>LazyLoad</h1>
+    <p>LazyLoad is a lightweight, flexible script that speeds up your website by deferring the loading of your below-the-fold images, videos and iframes to when they will enter the viewport. It's written in plain "vanilla" JavaScript, it leverages the IntersectionObserver API, it works with responsive images and it supports native lazy-loading.</p>
+</div>
+
+<div class="apparition">
+    <h1>LazyLoad</h1>
+    <p>LazyLoad is a lightweight, flexible script that speeds up your website by deferring the loading of your below-the-fold images, videos and iframes to when they will enter the viewport. It's written in plain "vanilla" JavaScript, it leverages the IntersectionObserver API, it works with responsive images and it supports native lazy-loading.</p>
+</div>
+
+<div class="apparition">
+    <h1>LazyLoad</h1>
+    <p>LazyLoad is a lightweight, flexible script that speeds up your website by deferring the loading of your below-the-fold images, videos and iframes to when they will enter the viewport. It's written in plain "vanilla" JavaScript, it leverages the IntersectionObserver API, it works with responsive images and it supports native lazy-loading.</p>
+</div>
+
+<div class="apparition">
+    <h1>LazyLoad</h1>
+    <p>LazyLoad is a lightweight, flexible script that speeds up your website by deferring the loading of your below-the-fold images, videos and iframes to when they will enter the viewport. It's written in plain "vanilla" JavaScript, it leverages the IntersectionObserver API, it works with responsive images and it supports native lazy-loading.</p>
+</div>
+
+<div class="apparition">
+    <h1>LazyLoad</h1>
+    <p>LazyLoad is a lightweight, flexible script that speeds up your website by deferring the loading of your below-the-fold images, videos and iframes to when they will enter the viewport. It's written in plain "vanilla" JavaScript, it leverages the IntersectionObserver API, it works with responsive images and it supports native lazy-loading.</p>
+
+    <img src="https://via.placeholder.com/150" alt="image">
+</div>
+
+<div class="apparition">
+    <h1>LazyLoad</h1>
+    <p>LazyLoad is a lightweight, flexible script that speeds up your website by deferring the loading of your below-the-fold images, videos and iframes to when they will enter the viewport. It's written in plain "vanilla" JavaScript, it leverages the IntersectionObserver API, it works with responsive images and it supports native lazy-loading.</p>
+</div>
+
+
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script>
+    $(document).ready(function (){
+        $(window).on('scroll',function (){
+            var scrolltop = $(this).scrollTop();
+            var windowHeight = $(this).height();
+            console.log(scrolltop);
+            console.log(windowHeight);
+
+            $('.apparition').each(function (){
+                var element = $(this);
+                var position = element.offset().top;
+                var elementHeight = element.outerHeight();
+
+                if(position <(scrolltop + windowHeight) && (position + elementHeight) > scrolltop){
+                    element.removeClass('invisible');
+                }else{
+                    element.addClass('invisible');
+                }
+
+            })
+        })
+    });
+</script>
+
+</body>
+</html>

@@ -1,0 +1,36 @@
+html,body{
+    margin: 0;
+    padding: 0;
+}
+
+#navbar{
+    margin-top: 25px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: gray;
+    position: relative;
+}
+
+#nav{
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    position: relative;
+}
+#nav a{
+    padding: 20px;
+    font-size: 25px;
+    text-decoration: none;
+}
+
+
+#bubulle{
+
+    width: 125px;
+    height: 50px;
+    background-color: red;
+    position: absolute;
+    border-radius: 10%;
+    opacity: 50%;
+}
